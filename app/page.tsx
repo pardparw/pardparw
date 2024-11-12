@@ -12,6 +12,7 @@ export default function Home() {
             <li><a href="#Award">Award</a></li>
             <li><a href="#Projects">Project</a></li>
             <li><a href="#Contact">Contact</a></li>
+            <li><a href="#Contact">Test</a></li>
           </ul>
       </header>
       
