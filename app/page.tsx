@@ -5,33 +5,38 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react';
 
 
+
 export default function Home() {
 
   const [Projectinfo, SetProjectinfo] = useState(["ProjectName", "Descriptions", ""]);
 
 
-  const [Project_Name] = useState(["SANDBLOCK แทนแกรมสร้างโลก", "Dream To Faculty", "COMSCI CHECK", "GUBGURU", "PIZZAPET"])
+  const [Project_Name] = useState(["SANDBLOCK แทนแกรมสร้างโลก", "Dream To Faculty", "COMSCI CHECK", "GUBGURU", "PIZZAPET", "KU Food Swipe"])
   const [Project_Details] = useState([
-          `เป็นเกมที่สิ่งปลูกสร้าง ยานพาหนะ สิ่งมีชีวิต ถูกสร้างจาก Tangram Tangram คือ
+    `เป็นเกมที่สิ่งปลูกสร้าง ยานพาหนะ สิ่งมีชีวิต ถูกสร้างจาก Tangram Tangram คือ
           การนำรูปทรงเรขาคณิต7ชิ้นมาต่อจนกลายเป็นสิ่งของ เมื่อต่อเสร็จรแล้วเราสามารถตกแต่งด้วยการลงสี กับ
           ติดสติกเกอร์ หลังจานั้นนำสิ่งของไปวางตกแต่งบนเกาะ หรือ วางบนน้ำได้ และ สิ่งของบางประเภทเช่น เรือ
           จะสามาขับได้ บ้านจะสามารถเข้าไปนอนได้ และ ยังสามารถตกแต่เกาะ หรือ เดินเล่น ร่วมกันกับเพื่อนในโหมด
-          Multiplayerได้` 
-          ,`เว็บแอปพิเคชันที่จะค้นหาคณะที่เหมาะกับตัวเองโดยใช้โมเดลพหุปัญญา เป็นการทำวิจัยเกี่ยวกับการจัดกลุ่มคณะ โดยแบ่งเป็น 5 กลุ่มในแต่ละกลุ่มจะนำจุดเด่น และ จุดด้อยของพหุปัญญาทั้ง 7 ด้านมาวิเคราะห์เป็นโมเดล  และ นำโมเดลไปใส่บนเว็บแอปพลิเคชัน`
-          , `เว็บแอปพลิเคชัน ยืม/คืน อุปกรณ์ ของศูนย์วิทย์-คอมฯ โรงเรัยนสตรีอ่างทอง`
-          , `เว็บแอปพลิเคชันจัดสรรงบประมาณโดยใช้ AI โดยจะจัดสรรการซื้อวัตถุดิบหรือสินค้าในการบริโภคสำหรับ 3 วัน โดยวัตถุดิบหรือสินค้าด้านการบริโภคจะเป็นวัตถุดิบที่มีอยู่ในชุมชนที่เราอาศัยอยู่โดยให้คนในชุมชนประกาศขายวัตถุดิบลงบนเว็บแอปพลิเคชันของเราเพื่อส่งเสริมให้คนในชุมชนมีรายได้มากขึ้นเพื่อทำให้ผู้ใช้งานมีสุขภาพที่ดีขึ้นและมีเงินเพียงพอในการใช้จ่ายต่างๆ ในชีวิตประจำวัน`
-          , `แอปพลิเคชันช่วยลดการเล่นสมาร์ตโฟนโดยให้ผู้เข้าใช้งานนำเวลาที่ไม่ได้เล่นสมาร์ตโฟนนําไปทำกิจกรรมที่ต้องการ
+          Multiplayerได้`
+    , `เว็บแอปพิเคชันที่จะค้นหาคณะที่เหมาะกับตัวเองโดยใช้โมเดลพหุปัญญา เป็นการทำวิจัยเกี่ยวกับการจัดกลุ่มคณะ โดยแบ่งเป็น 5 กลุ่มในแต่ละกลุ่มจะนำจุดเด่น และ จุดด้อยของพหุปัญญาทั้ง 7 ด้านมาวิเคราะห์เป็นโมเดล  และ นำโมเดลไปใส่บนเว็บแอปพลิเคชัน`
+    , `เว็บแอปพลิเคชัน ยืม/คืน อุปกรณ์ ของศูนย์วิทย์-คอมฯ โรงเรัยนสตรีอ่างทอง`
+    , `เว็บแอปพลิเคชันจัดสรรงบประมาณโดยใช้ AI โดยจะจัดสรรการซื้อวัตถุดิบหรือสินค้าในการบริโภคสำหรับ 3 วัน โดยวัตถุดิบหรือสินค้าด้านการบริโภคจะเป็นวัตถุดิบที่มีอยู่ในชุมชนที่เราอาศัยอยู่โดยให้คนในชุมชนประกาศขายวัตถุดิบลงบนเว็บแอปพลิเคชันของเราเพื่อส่งเสริมให้คนในชุมชนมีรายได้มากขึ้นเพื่อทำให้ผู้ใช้งานมีสุขภาพที่ดีขึ้นและมีเงินเพียงพอในการใช้จ่ายต่างๆ ในชีวิตประจำวัน`
+    , `แอปพลิเคชันช่วยลดการเล่นสมาร์ตโฟนโดยให้ผู้เข้าใช้งานนำเวลาที่ไม่ได้เล่นสมาร์ตโฟนนําไปทำกิจกรรมที่ต้องการ
           เช่น “การวิ่ง” โดยการวิ่งจะใช้ GPS และการนับก้าว 
           “การอ่านหนังสือ” โดยการอ่านหนังสือระบบจะทำการเปิดกล้องและใช้ AI ในการตรวจสอบว่าหน้าอยู่ในกรอบหรือไม่
           โดยนําคะแนนที่ได้จากการทำกิจกรรม ไปเลี้ยงสัตว์เลี้ยง 
-          และซื้อของตกแต่งภายในแอปพลิเคชัน`])
+          และซื้อของตกแต่งภายในแอปพลิเคชัน`
+    , `KU Food Swipe เป็นเว็บแอปพลิเคชันที่ออกแบบมาเพื่อแก้ปัญหา "เที่ยงนี้กินอะไรดี?" สำหรับนิสิต บุคลากร เจ้าหน้าที่ และบุคคลภายนอกในมหาวิทยาลัยเกษตรศาสตร์ โดยใช้ระบบการปัด (Swipe) ที่ช่วยให้การค้นหาเมนูอาหารเป็นเรื่องสนุก พร้อมทำความรู้จักร้านค้าและโรงอาหาร (บาร์) ต่างๆ ภายในมหาวิทยาลัยเพิ่มขึ้น`
+  ])
 
   const [Project_Link] = useState([
     "http://os.sa.ac.th/comsci/detail.php?pid=95"
     , "http://app.sa.ac.th/dream-to-faculty/"
-    , "https://comsci-check.vercel.app/"
+    , "https://github.com/pardparw/comsci-check"
     , "https://drive.google.com/file/d/1kHVlkSJVTyoYq09uxhqi7llymqsgMHb3/view?usp=sharing"
-    , "http://os.sa.ac.th/comsci/detail.php?pid=87"])
+    , "http://os.sa.ac.th/comsci/detail.php?pid=87"
+    , "https://github.com/KiseKi7k/ku-food-swipe"
+  ])
 
   const OpenModals = (index: number) => {
     SetProjectinfo([Project_Name[index], Project_Details[index], Project_Link[index]]);
@@ -76,7 +81,7 @@ export default function Home() {
         <section className="grid justify-center content-center gap-[25%] grid-flow-col">
           <h1 className='mt-[25%] text-[24px] font-bold'>Pheemmapong Rodvaree</h1>
           <Image className='shadow-xl	rounded-[50%] max-w-[150px]'
-            src="http://app.sa.ac.th/gubguru/pages/registerseller/uploads/Portfolio/672b8903e3e29.png"
+            src="/images/672b8903e3e29.webp"
             width={150}
             height={150}
             alt="Profile"
@@ -135,23 +140,26 @@ export default function Home() {
         <section className='flex flex-wrap justify-center gap-[20px]'>
           <div onClick={() => OpenModals(0)} className='flex justify-center content-center w-[10cm] h-[10cm] cusor-pointer bg-[#000] box-border rounded-[16px] shadow-xl cursor-pointer'>
             <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]'
-              src={"http://app.sa.ac.th/gubguru/pages/registerseller/uploads/Portfolio/672b7cec8d1d7.png"}
+              src={"/images/672b7cec8d1d7.webp"}
               width={350}
               height={350}
               alt='Award' />
 
           </div>
           <div onClick={() => OpenModals(1)} className='flex justify-center content-center w-[10cm] h-[10cm] cusor-pointer bg-[#1a1a1a] box-border rounded-[16px] shadow-xl cursor-pointer'>
-            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"http://app.sa.ac.th/gubguru/pages/registerseller/uploads/Portfolio/672b7cfbdb99a.png"} width={350} height={350} alt='Award' />
+            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"/images/672b7cfbdb99a.webp"} width={350} height={350} alt='Award' />
           </div>
           <div onClick={() => OpenModals(2)} className='flex justify-center content-center w-[10cm] h-[10cm] cusor-pointer bg-[#fff] box-border rounded-[16px] shadow-xl cursor-pointer'>
-            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"http://app.sa.ac.th/gubguru/pages/registerseller/uploads/Portfolio/672b7cefc965a.png"} width={350} height={350} alt='Award' />
+            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"/images/672b7cefc965a.webp"} width={350} height={350} alt='Award' />
           </div>
           <div onClick={() => OpenModals(3)} className='flex justify-center content-center w-[10cm] h-[10cm] cusor-pointer bg-[#b0e483] box-border rounded-[16px] shadow-xl cursor-pointer'>
-            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"http://app.sa.ac.th/gubguru/pages/registerseller/uploads/Portfolio/672b7cf74cd73.png"} width={350} height={350} alt='Award' />
+            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"/images/672b7cf74cd73.webp"} width={350} height={350} alt='Award' />
           </div>
           <div onClick={() => OpenModals(4)} className='flex justify-center content-center w-[10cm] h-[10cm] cusor-pointer bg-[#68cbff] box-border rounded-[16px] shadow-xl cursor-pointer'>
-            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"http://app.sa.ac.th/gubguru/pages/registerseller/uploads/Portfolio/672b7cf3b5827.png"} width={350} height={350} alt='Award' />
+            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"/images/672b7cf3b5827.webp"} width={350} height={350} alt='Award' />
+          </div>
+          <div onClick={() => OpenModals(5)} className='flex justify-center content-center w-[10cm] h-[10cm] cusor-pointer bg-[#fff] box-border rounded-[16px] shadow-xl cursor-pointer'>
+            <Image className='max-w-[100%] max-h-[100%] object-contain rounded-[16px]' src={"/images/672b8903r3ec5.webp"} width={350} height={350} alt='Award' />
           </div>
         </section>
 
@@ -182,7 +190,7 @@ export default function Home() {
               d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
           </svg>
 
-          <p >pheemmpong7163@gmail.com</p>
+          <p >pheemmapong.r@ku.th</p>
           <br />
 
 
